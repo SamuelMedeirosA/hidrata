@@ -152,14 +152,40 @@
   }
 
   .activity-option {
+    transition: 0.4s;
     display: flex;
     align-items: center;
+    flex-direction: column;
     margin: 10px 0;
+    max-width: 300px;
+    padding: 2%;
+    border-radius: 15px;
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    -webkit-touch-callout: none;  /* iPhone OS, Safari */
+    -webkit-user-select: none;    /* Chrome, Safari 3 */
+    -khtml-user-select: none;     /* Safari 2 */
+    -moz-user-select: none;       /* Firefox */
+    -ms-user-select: none;        /* IE10+ */
+    user-select: none;            /* Possível implementação no futuro */
+      /* cursor: default; */
+  }
+
+  .activity-option:hover{
+    transform: scale(1.1);
+  }
+
+  .activity-option input{
+    display: none;
+  }
+
+  .activity-option label{
+    cursor: pointer;
   }
 
   .activity-option i {
     margin-right: 10px;
-    font-size: 20px;
+    font-size: 30px;
     color: #0077b6;
   }
 
