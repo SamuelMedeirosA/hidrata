@@ -6,6 +6,26 @@ window.onload = function() {
     }, 50); // Um pequeno atraso para garantir que o CSS seja aplicado corretamente
 };
 
+function mudaCor(n){
+    if(n == 1){
+        document.querySelector("#ONE").style.backgroundColor = "#dddddd";
+        document.querySelector("#TWO").style.backgroundColor = "#FFF";
+        document.querySelector("#THREE").style.backgroundColor = "#FFF";
+    };
+    
+    if(n == 2){
+        document.querySelector("#TWO").style.backgroundColor = "#dddddd";
+        document.querySelector("#THREE").style.backgroundColor = "#FFF";
+        document.querySelector("ONE").style.backgroundColor = "#FFF";
+    };
+    
+    if(n == 3){
+        document.querySelector("#THREE").style.backgroundColor = "#dddddd";
+        document.querySelector("#TWO").style.backgroundColor = "#FFF";
+        document.querySelector("ONE").style.backgroundColor = "#FFF";
+    };
+}
+
 function updateValues() {
     const age = parseInt(document.getElementById('age').value);
     const weight = parseInt(document.getElementById('weight').value);
@@ -13,6 +33,7 @@ function updateValues() {
 
     document.getElementById('age-value').textContent = `${age} anos`;
     document.getElementById('weight-value').textContent = `${weight} kg`;
+    
 
     let waterIntakePerKg;
     if (age <= 17) {
@@ -31,7 +52,7 @@ function updateValues() {
     // Alterando a altura da água no copo
     const waterHeight = Math.min(10, waterIntake); // Máximo de 10L representado
     const cupWater = document.getElementById('water');
-    console.log(waterHeight);
+    //console.log(waterHeight);
     cupWater.style.height = `${(waterHeight / 10) * 200}px`; // Ajusta a altura da água no copo
 }
 
