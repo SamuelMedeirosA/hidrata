@@ -1,0 +1,130 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body{
+    overflow: hidden;
+}
+
+/* Transição de opacidade para fade */
+.fade-out {
+    opacity: 1;
+    transition: opacity 0.6s ease-in-out;
+}
+
+.fade-out.hidden {
+    opacity: 0;
+}
+
+/* Adicione uma classe para a animação de entrada (fade in) na próxima página */
+.fade-in {
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+}
+
+
+/* Splash Screen Container */
+.splash-screen {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #A1C4FD 0%, #C2E9FB 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Central content */
+.content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: white;
+    margin-top: -100px;
+    max-width: 500px;
+}
+
+.content h1 {
+    font-size: 4rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 2s ease-in-out;
+}
+
+.content p {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    animation: fadeIn 3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Estilo para todas as bolhas */
+.bubble {
+    position: absolute;
+    bottom: -50px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: rise-smooth 8s ease-in-out forwards;
+    cursor: pointer; /* Todas as bolhas são interativas */
+}
+
+/* Animação de subida suave com movimento lateral */
+@keyframes rise-smooth {
+    0% {
+        bottom: -50px;
+        transform: translateX(0); /* Ponto inicial */
+    }
+    25% {
+        transform: translateX(-15px); /* Move um pouco para a esquerda */
+    }
+    50% {
+        transform: translateX(10px); /* Move de volta para a direita */
+    }
+    75% {
+        transform: translateX(-10px); /* Move levemente para a esquerda novamente */
+    }
+    100% {
+        bottom: 110vh; 
+        transform: translateX(5px); /* Suave ao sair do topo */
+        opacity: 0;
+    }
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .content h1 {
+        font-size: 3rem;
+    }
+
+    .content p {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .content h1 {
+        font-size: 3rem;
+    }
+
+    .content p {
+        font-size: 1rem;
+    }
+}
