@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow: hidden;
   }
   
   body {
@@ -12,7 +13,6 @@
     height: 100vh;
     background: linear-gradient(135deg, #A1C4FD 0%, #C2E9FB 100%);
     z-index: 1 !important;
-    overflow: hidden;
   }
 
   /* Transição de opacidade para fade */
@@ -61,7 +61,7 @@
   }
   
   h1 {
-    margin-bottom: 10px;
+    margin: 15px 0;
     color: #0077b6;
   }
   
@@ -271,5 +271,44 @@
       bottom: 110vh; 
       transform: translateX(5px); /* Suave ao sair do topo */
       opacity: 0;
+  }
+}
+
+.back-button {
+  height: 10px;
+  width: 100px;
+  background-color: #007bff; /* Cor de fundo do botão */
+  color: white; /* Cor do texto */
+  border: none; /* Remove qualquer borda padrão */
+  border-radius: 50px; /* Bordas arredondadas */
+  padding: 20px; /* Espaçamento interno (padding) */
+  font-size: 16px; /* Tamanho da fonte */
+  font-family: 'Arial', sans-serif; /* Estilo de fonte */
+  cursor: pointer; /* Muda o cursor para indicar que é clicável */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Transição suave */
+  outline: none; /* Remove o contorno ao focar */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-button:hover {
+  background-color: #0056b3; /* Cor ao passar o mouse (hover) */
+  transform: scale(1.05); /* Leve zoom ao passar o mouse */
+}
+
+.back-button:active {
+  background-color: #004080; /* Cor ao clicar */
+  transform: scale(0.95); /* Leve redução ao clicar */
+}
+
+.back-button:focus {
+  outline: 2px solid #0056b3; /* Adiciona um contorno ao focar */
+}
+
+@media screen and (max-width: 600px){
+  .back-button{
+    display: none;
   }
 }
