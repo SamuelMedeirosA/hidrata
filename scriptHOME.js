@@ -11,18 +11,21 @@ function mudaCor(n){
         document.querySelector("#ONE").style.backgroundColor = "#dddddd";
         document.querySelector("#TWO").style.backgroundColor = "#FFF";
         document.querySelector("#THREE").style.backgroundColor = "#FFF";
+        console.log('é 1');
     };
     
     if(n == 2){
         document.querySelector("#TWO").style.backgroundColor = "#dddddd";
         document.querySelector("#THREE").style.backgroundColor = "#FFF";
-        document.querySelector("ONE").style.backgroundColor = "#FFF";
+        document.querySelector("#ONE").style.backgroundColor = "#FFF";
+        console.log('é 2');
     };
     
     if(n == 3){
         document.querySelector("#THREE").style.backgroundColor = "#dddddd";
         document.querySelector("#TWO").style.backgroundColor = "#FFF";
-        document.querySelector("ONE").style.backgroundColor = "#FFF";
+        document.querySelector("#ONE").style.backgroundColor = "#FFF";
+        console.log('é 3');
     };
 }
 
@@ -140,3 +143,13 @@ function createBubble() {
 
 // Criar bolhas a cada intervalo
 setInterval(createBubble, 500);
+
+function back() {
+    // Adiciona a classe fade-out para iniciar o efeito de desaparecimento
+    document.body.classList.add('fade-out');
+
+    // Atraso para esperar o fade-out completar antes de redirecionar
+    setTimeout(() => {
+        window.location.href = 'index.html'; // Redireciona para a próxima página
+    }, 600); // Corresponde ao tempo da transição no CSS (0.6s)
+}
