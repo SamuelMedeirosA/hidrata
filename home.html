@@ -37,32 +37,43 @@
       <input type="range" id="weight" min="30" max="150" value="70" oninput="updateValues()">
       <span id="weight-value">70 kg</span>
     </div>
+
     </div><!--wrap1-->
     <div id="wrap2" class="wrap2">
-    <label for="activity">Nível de Atividade:</label>
-    <div class="activity-option">
+
+    <label for="activity">* Selecione seu nível de atividade</label>
+
+    <div class="activity-option 1" id="ONE" onclick="mudaCor(1)">
+      <label for="1">
         <i class="fas fa-user-alt"></i>
-        <input type="radio" name="activity" value="1.0" onchange="updateValues()" checked>
+        <input type="radio" name="activity" id='1' value="1.0" onchange="updateValues()" checked>
         <label>Sedentário</label>
-        <span>(Ingestão padrão para quem não se exercita.)</span>
+        <span>Para quem não tem o costume de se exercitar</span>
+        </label>
     </div>
-    <div class="activity-option">
+
+    <div class="activity-option 2" id="TWO" onclick="mudaCor(2)">
+      <label for="2">
         <i class="fas fa-running"></i>
-        <input type="radio" name="activity" value="1.2" onchange="updateValues()">
+        <input type="radio" name="activity" id='2' value="1.2" onchange="updateValues()">
         <label>Levemente Ativo</label>
-        <span>(Para quem se exercita regularmente, como caminhadas ou corridas leves.)</span>
+        <span>Para quem se exercita regularmente, como caminhadas ou corridas leves</span>
+      </label>
     </div>
-    <div class="activity-option">
+
+    <div class="activity-option" id="THREE" onclick="mudaCor(3)">
+      <label for="3">
         <i class="fas fa-basketball-ball"></i>
-        <input type="radio" name="activity" value="1.4" onchange="updateValues()">
+        <input type="radio" name="activity" id='3' value="1.4" onchange="updateValues()">
         <label>Muito Ativo</label>
-        <span>(Para atletas e atividades intensas, como maratonas.)</span>
+        <span>Para atletas e atividades intensas, como maratonas</span>
+      </label>
     </div>
 
     </div><!--wrap2-->
   </div>
 
 
-  <script src="scriptHOME.js"></script>
+  <script src="scriptHOME.js" defer ></script>
 </body>
 </html>
