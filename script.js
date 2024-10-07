@@ -1,7 +1,7 @@
 // script.js
 
 // Função para criar uma bolha
-const photos = ['/hidrata/img/G.jpg', 'hidrata/img/NI.jpg', 'hidrata/img/S.jpg', 'hidrata/img/T.jpg', 'hidrata/img/J.jpg', 'hidrata/img/N.jpg', 'hidrata/img/JP.jpg'];
+const photos = ['https://samuelmedeirosa.github.io/hidrata/img/G.jpg', 'https://samuelmedeirosa.github.io/hidrata/img/NI.jpg', 'https://samuelmedeirosa.github.io/hidrata/img/S.jpg', 'https://samuelmedeirosa.github.io/hidrata/img/T.jpg', 'https://samuelmedeirosa.github.io/hidrata/img/J.jpg', 'https://samuelmedeirosa.github.io/hidrata/img/N.jpg', 'https://samuelmedeirosa.github.io/hidrata/img/JP.jpg'];
 let photoIndex = 0;
 
 function createBubble() {
