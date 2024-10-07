@@ -4,10 +4,15 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Arial', sans-serif;
+    overflow: hidden;
 }
 
-body{
-    overflow: hidden;
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Previne o scroll horizontal */
+    width: 100vw; /* Garante que o body não expanda além da tela */
+    height: 100vh; /* Garante que o body ocupe a altura total */
 }
 
 /* Transição de opacidade para fade */
@@ -33,6 +38,7 @@ body{
 
 /* Splash Screen Container */
 .splash-screen {
+    width: 100vw;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -44,7 +50,6 @@ body{
 
 /* Central content */
 .content {
-    position: relative;
     z-index: 1;
     text-align: center;
     color: white;
@@ -78,7 +83,7 @@ body{
 /* Estilo para todas as bolhas */
 .bubble {
     position: absolute;
-    bottom: -50px;
+    bottom: 20px;
     background: rgba(255, 255, 255, 0.5);
     border-radius: 50%;
     opacity: 0.8;
@@ -86,6 +91,7 @@ body{
     cursor: pointer;
     border: none; /* Remove qualquer borda */
     overflow: hidden; /* Garante que a imagem de fundo se ajuste à borda arredondada */
+    filter: hue-rotate(-150deg);
 }
 
 .bubble.photo {
@@ -138,6 +144,10 @@ body{
 }
 
 @media (max-width: 480px) {
+    .content{
+        max-width: 300px;
+    }
+
     .content h1 {
         font-size: 3rem;
     }
@@ -159,3 +169,35 @@ body{
         transform: translate(-30px, -300px);
     }
 }
+
+.back-button {
+    width: 50%;
+    background-color: #007bff;
+    color: white;
+    border-radius: 50px;
+    padding: 10px;
+    margin: 20px 0 0 0;
+    font-size: 16px; 
+    font-family: 'Arial', sans-serif;
+    cursor: pointer; 
+    animation: fadeIn 2s ease-in-out;
+    outline: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid #0053ad;
+  }
+
+  .back-button:hover {
+    background-color: #0056b3; /* Cor ao passar o mouse (hover) */
+    transform: scale(1.05); /* Leve zoom ao passar o mouse */
+  }
+  
+  .back-button:active {
+    background-color: #004080; /* Cor ao clicar */
+    transform: scale(0.95); /* Leve redução ao clicar */
+  }
+  
+  .back-button:focus {
+    outline: 2px solid #0056b3; /* Adiciona um contorno ao focar */
+  }

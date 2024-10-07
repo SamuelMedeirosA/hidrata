@@ -1,7 +1,7 @@
 // script.js
 
 // Função para criar uma bolha
-const photos = ['/hidrata/img/G.jpg', '/hidrata/img/NI.jpg', '/hidrata/img/S.jpg', '/hidrata/img/T.jpg', '/hidrata/img/J.jpg', '/hidrata/img/N.jpg', '/hidrata/img/JP.jpg'];
+const photos = ['hidrata/img/G.jpg', 'hidrata/img/NI.jpg', 'hidrata/img/S.jpg', 'hidrata/img/T.jpg', 'hidrata/img/J.jpg', 'hidrata/img/N.jpg', 'hidrata/img/JP.jpg'];
 let photoIndex = 0;
 
 function createBubble() {
@@ -9,7 +9,7 @@ function createBubble() {
     bubble.classList.add('bubble');
 
     // Define se a bolha vai ter uma foto (50% das bolhas)
-    const hasPhoto = Math.random() > 0.6;
+    const hasPhoto = Math.random() > 0.7;
 
     if (hasPhoto) {
         bubble.classList.add('photo');
@@ -26,8 +26,9 @@ function createBubble() {
     bubble.style.width = `${size}px`;
     bubble.style.height = `${size}px`;
 
-    // Posição horizontal aleatória
-    bubble.style.left = `${Math.random() * 100}vw`;
+    // Posição horizontal ajustada para garantir que a bolha fique dentro da tela
+    const positionLeft = Math.random() * (window.innerWidth - size); // Garante que não ultrapasse as bordas
+    bubble.style.left = `${positionLeft}px`;
 
     // Tempo de animação aleatório
     const duration = Math.random() * 5 + 5; // Duração entre 5s e 10s

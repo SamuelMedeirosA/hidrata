@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow: hidden;
   }
   
   body {
@@ -13,6 +12,7 @@
     height: 100vh;
     background: linear-gradient(135deg, #A1C4FD 0%, #C2E9FB 100%);
     z-index: 1 !important;
+    overflow: hidden;
   }
 
   /* Transição de opacidade para fade */
@@ -36,8 +36,10 @@
 }
   
   .container {
+    position: relative;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    align-items: center;
     width: 80%;
     max-width: 1000px;
     background-color: white;
@@ -50,8 +52,25 @@
   .wrap1,.wrap2{
     width: 40%;
     text-align: center;
-    justify-content:space-between
+    justify-content: center;
+    align-items: center;
+    transition: 1s ease; /* Transição suave */
   }
+
+  .wrap1{
+    display: block;
+    opacity: 1;
+  }
+
+  /* .wrap2{
+    display: block;
+    opacity: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+  }
+   */
 
   .wrap2{
     display: flex;
@@ -59,15 +78,17 @@
     justify-content: space-between;
     align-items: center;
   }
-  
+
   h1 {
     margin: 15px 0;
     color: #0077b6;
+    font-size: 1.5em;
   }
   
   p {
     margin-bottom: 20px;
     color: #555;
+    font-size: 1em;
   }
   
   .input-container {
@@ -92,7 +113,6 @@
     padding: 8px;
     border-radius: 5px;
     border: 1px solid #ccc;
-    margin-bottom: 20px;
   }
   
   span {
@@ -103,9 +123,9 @@
   
   /* Estilização do copo */
   .avatar {
-    width: 100px;
-    height: 150px;
-    margin: 20px auto;
+    width: 7em;
+    height: 10em;
+    margin: 0px auto;
     position: relative;
     border: 5px solid #0077b6;
     border-radius: 0 0 40px 40px; /* Arredondamento no fundo para o formato de um copo */
@@ -114,6 +134,12 @@
     display: flex;
     justify-content: center;
     align-items: flex-end;
+  }
+
+  #msgInicial{
+    position: absolute;
+    font-size: 0.7em;
+    color: #000;
   }
   
   /* Base do copo */
@@ -136,14 +162,22 @@
     width: 100%;
     background-color: #00b4d8;
     transition: height 0.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
+    font-size: 1.5em;
   }
 
   .input-container {
     margin: 20px;
     flex: 1; /* Expande para ocupar espaço disponível */
     z-index: 9999 !important;
+  }
+
+  .input-container input{
+    height: 40px !important;
   }
 
   .activity-container {
@@ -200,25 +234,28 @@
     width: 100% !important;
     height: 100%;
     flex-shrink: 0;
-    display: none;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     padding: 0px;
     text-align: center;
+    transition: 2s;
 }
 
-
+.back2,.config{
+  display: inline-block;
+}
 
 /* Mostrar a div ativa */
 .wrap1.active {
-    display: flex;
+    display: flex;  
+    opacity: 1;
 }
 
-.wrap2.active {
+/*.wrap2.active {
   display: flex;
-  z-index: 9;
 }
+*/
 
 .container {
   flex-direction: column;
@@ -232,12 +269,13 @@
 }
 
 .full{
+  display: none;
   position: absolute;
   top: 0;
   bottom: 0;
   width: 100%;
   height: 100%;
-  z-index: 1;
+  z-index: 999999999;
 }
 
 
@@ -275,22 +313,30 @@
 }
 
 .back-button {
-  height: 10px;
-  width: 100px;
-  background-color: #007bff; /* Cor de fundo do botão */
-  color: white; /* Cor do texto */
-  border: none; /* Remove qualquer borda padrão */
-  border-radius: 50px; /* Bordas arredondadas */
-  padding: 20px; /* Espaçamento interno (padding) */
-  font-size: 16px; /* Tamanho da fonte */
-  font-family: 'Arial', sans-serif; /* Estilo de fonte */
-  cursor: pointer; /* Muda o cursor para indicar que é clicável */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Transição suave */
-  outline: none; /* Remove o contorno ao focar */
+  width: 100%;
+  background-color: #007bff;
+  color: white;
+  border-radius: 50px;
+  padding: 10px;
+  margin: 20px 0 0 0;
+  font-size: 16px; 
+  font-family: 'Arial', sans-serif;
+  cursor: pointer; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  outline: none;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  border-bottom: 2px solid #0053ad;
+}
+
+.back2{
+  display: none;
+}
+
+.wrap2 .back-button{
+  width: 80%;
 }
 
 .back-button:hover {
@@ -308,7 +354,24 @@
 }
 
 @media screen and (max-width: 600px){
-  .back-button{
-    display: none;
+  .avatar {
+    width: 6.5em;
+    height: 10em;
   }
+}
+
+.wrapButton{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.wrapButton .config{
+  width: 20%;
+  margin-right: 10px;
+}
+
+.config{
+  display: none;
 }
