@@ -28,14 +28,14 @@
     <div class="input-container">
       <!-- Resultado: Água Recomendada -->
       <label for="age">Idade:</label>
-      <input type="range" id="age" min="5" max="120" value="25" oninput="updateValues()">
+      <input type="range" id="age" min="5" max="120" value="25" oninput="updateValues2()">
       <span id="age-value">25 anos</span>
     </div>
     
     <!-- Input: Peso -->
     <div class="input-container">
       <label for="weight">Peso (kg):</label>
-      <input type="range" id="weight" min="30" max="150" value="70" oninput="updateValues()">
+      <input type="range" id="weight" min="30" max="150" value="70" oninput="updateValues2()">
       <span id="weight-value">70 kg</span>
       <div class="wrapButton">
         <div class="back-button config" id="config" onclick="back(2)"><i class="fa fa-cog"></i></div>
@@ -48,28 +48,28 @@
 
     <label for="activity">* Selecione seu nível de atividade</label>
 
-    <div class="activity-option" id="ONE" onclick="mudaCor(1)">
+    <div class="activity-option" id="ONE" onclick="update(1)">
       <label for="1">
         <i class="fas fa-user-alt"></i>
-        <input type="radio" name="activity" id='1' value="1.0" onchange="updateValues()" checked>
+        <input type="radio" name="activity" id='1' value="1.0" checked>
         <label>Sedentário</label>
         <span>Para quem não tem o costume de se exercitar</span>
         </label>
     </div>
 
-    <div class="activity-option" id="TWO" onclick="mudaCor(2)">
+    <div class="activity-option" id="TWO" onclick="update(2)">
       <label for="2">
         <i class="fas fa-running"></i>
-        <input type="radio" name="activity" id='2' value="1.2" onchange="updateValues()">
+        <input type="radio" name="activity" id='2' value="1.2">
         <label>Levemente Ativo</label>
         <span>Para quem se exercita regularmente, como caminhadas ou corridas leves</span>
       </label>
     </div>
 
-    <div class="activity-option" id="THREE" onclick="mudaCor(3)">
+    <div class="activity-option" id="THREE" onclick="update(3)">
       <label for="3">
         <i class="fas fa-basketball-ball"></i>
-        <input type="radio" name="activity" id='3' value="1.4" onchange="updateValues()">
+        <input type="radio" name="activity" id='3' value="1.4">
         <label>Muito Ativo</label>
         <span>Para atletas e atividades intensas, como maratonas</span>
       </label>

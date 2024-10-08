@@ -26,18 +26,33 @@ function mudaCor(n){
     };
 }
 
-mudaCor(1);
 
-function updateValues() {
-    const age = parseInt(document.getElementById('age').value);
-    const weight = parseInt(document.getElementById('weight').value);
-    let activity = parseFloat(document.querySelector('input[name="activity"]:checked').value);
-    
+// setInterval(() => {
+//     updateValues();
+// }, 100);
+
+
+
+function update(n){
+    updateValues(n);
+    // updateValues2();
+    mudaCor(n);
+}
+
+function updateValues2(){
+    updateValues();
+    mudaCor(1)
+}
+
+function updateValues(n=1) {
+    let age = parseInt(document.getElementById('age').value);
+    let weight = parseInt(document.getElementById('weight').value);
 
     document.getElementById('age-value').textContent = `${age} anos`;
     document.getElementById('weight-value').textContent = `${weight} kg`;
     
-
+    var activity = parseFloat(document.getElementById(`${n}`).value);
+    
     var waterIntakePerKg;
     if (age <= 17) {
         waterIntakePerKg = 40;
@@ -50,7 +65,7 @@ function updateValues() {
     }
 
     
-    let waterIntake = ((weight * waterIntakePerKg) / 1000 * activity).toFixed(1);
+    var waterIntake = ((weight * waterIntakePerKg) / 1000 * activity).toFixed(1);
 
     if(waterIntake <=1.5){
         document.getElementById('waterP').style.color = `#00b4d8`;
